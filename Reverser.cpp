@@ -23,7 +23,7 @@ string Reverser::reverseString(string characters) {
   //get the length of hte string
     //if the length less than one error
     if (characters.length() <= 1) {
-    return "error";
+    return characters;
   }
 
   char laskstring = characters.back();
