@@ -21,7 +21,6 @@ int Reverser::reverseDigit(int value) {
 
 string Reverser::reverseString(string characters) {
   //get the length of hte string
-    int length = characters.length();
     //if the length less than one error
     if (characters.length() <= 1) {
     return "error";
