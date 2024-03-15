@@ -2,18 +2,21 @@
 #include <cmath>
 
 int Reverser::reverseDigit(int value) {
-    if (value < 0) {
-        return -1;
-    }
+  if (value < 0) {
+    return -1;
+  }
 
-    int reversed = 0;
-    while (value != 0) {
-        int digit = value % 10;
-        reversed = reversed * 10 + digit;
-        value /= 10;
-    }
+  if (value < 10) {
+    return value;
+  }
+  // get 
+  int othernum = value % 10;
 
-    return reversed;
+  int number = 1;
+  while (value / pow(10, number) > 10) {
+    number++;
+  }
+  return othernum * pow(10, number) + reverseDigit(value / 10);
 }
 
 string Reverser::reverseString(string characters) {
@@ -24,10 +27,7 @@ string Reverser::reverseString(string characters) {
     return "error";
   }
 
-    for (int i = 0; i < length / 2; ++i) {
-        char temp = characters[i];
-        characters[i] = characters[length - i - 1];
-        characters[length - i - 1] = temp;
-    }
-    return characters;
+  char laskstring = characters.back();
+  characters.pop_back();
+  return laskstring + reverseString(characters);
 }

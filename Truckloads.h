@@ -1,5 +1,5 @@
-#ifndef TRUNKLOADS
-#define TRUNKLOADS
+#ifndef TRUNKLOADS_H
+#define TRUNKLOADS_H
 #include <string>
 using namespace std;
 
